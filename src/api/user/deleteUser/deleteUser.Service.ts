@@ -2,9 +2,10 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Not, Repository } from "typeorm";
 import { UserEntity } from "src/core/entities/user/user.entity";
+import { DeleteUserProvider } from "./deleteUser.provider";
 
 @Injectable()
-export class DeleteUserService {
+export class DeleteUserService implements DeleteUserProvider{
     constructor(
         @InjectRepository(UserEntity)
         private readonly userRepository: Repository<UserEntity>,

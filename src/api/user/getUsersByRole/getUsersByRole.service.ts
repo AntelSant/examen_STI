@@ -3,9 +3,10 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { UserEntity } from "src/core/entities/user/user.entity";
 import { RoleEntity } from "src/core/entities/role/role.entity";
+import { GetUsersByRoleProvider } from "./getUsersByRole.provider";
 
 @Injectable()
-export class GetUserByRoleService {
+export class GetUserByRoleService implements GetUsersByRoleProvider{
     constructor(
         @InjectRepository(UserEntity)
         private readonly userRepository: Repository<UserEntity>,

@@ -1,8 +1,9 @@
 import {Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 import { RoleEntity } from "../role/role.entity";
+import { UserInterface } from "./user.interface";
 
 @Entity('users')
-export class UserEntity {
+export class UserEntity implements UserInterface{
     @PrimaryGeneratedColumn('uuid')
     id: string;
 

@@ -2,9 +2,10 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UserEntity } from 'src/core/entities/user/user.entity';
+import { GetUsersByStatusProvider } from './getUsersByStatus.provider';
 
 @Injectable()
-export class GetUsersByStatusService {
+export class GetUsersByStatusService implements GetUsersByStatusProvider{
     constructor(
         @InjectRepository(UserEntity)
         private readonly userRepository: Repository<UserEntity>,

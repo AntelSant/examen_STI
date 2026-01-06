@@ -2,9 +2,10 @@ import { BadRequestException, Injectable, NotFoundException } from "@nestjs/comm
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { RoleEntity } from "src/core/entities/role/role.entity";
+import { DeleteRoleProvider } from "./deleteRole.provider";
 
 @Injectable()
-export class DeleteRoleSevice {
+export class DeleteRoleSevice implements DeleteRoleProvider{
     constructor(
         @InjectRepository(RoleEntity)
         private readonly roleRepository: Repository<RoleEntity>,

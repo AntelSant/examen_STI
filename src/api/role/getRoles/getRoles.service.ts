@@ -2,9 +2,10 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { RoleEntity } from "src/core/entities/role/role.entity";
+import { GetRolesProvider } from "./getRoles.provider";
 
 @Injectable()
-export class GetRolesService {
+export class GetRolesService implements GetRolesProvider{
     constructor(
         @InjectRepository(RoleEntity)
         private readonly roleRepository: Repository<RoleEntity>,
