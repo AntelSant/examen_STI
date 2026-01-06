@@ -9,7 +9,7 @@ import {TypeOrmModule} from '@nestjs/typeorm';
             port: 5432,
             username: 'santiago',
             password: 'santiago',
-            database: 'examen_nest',
+            database: 'examen_nest_2',
             autoLoadEntities: true,
             synchronize: true,
         })

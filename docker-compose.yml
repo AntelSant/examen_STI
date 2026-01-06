@@ -6,7 +6,7 @@ services:
     container_name: examen_nest_shino
     restart: always
     environment:
-      POSTGRES_DB: examen_nest
+      POSTGRES_DB: examen_nest_2
       POSTGRES_USER: santiago
       POSTGRES_PASSWORD: santiago
     ports:

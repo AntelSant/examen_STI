@@ -15,6 +15,8 @@ import { AssignRoleModule } from './api/user/assignRole/assignRole.module';
 import { DeleteRoleModule } from './api/role/deleteRole/deleteRole.module';
 import { GetUserByRoleModule } from './api/user/getUsersByRole/getUsersByRole.module';
 import { UpdateRoleModule } from './api/role/updateRole/updateRole.module';
+import { RegisterModule } from './api/auth/register/register.module';
+import { LoginModule } from './api/auth/login/login.module';
 
 @Module({
   imports: [DatabaseModule, 
@@ -30,6 +32,8 @@ import { UpdateRoleModule } from './api/role/updateRole/updateRole.module';
     DeleteRoleModule,
     GetUserByRoleModule,
     UpdateRoleModule,
+    RegisterModule,
+    LoginModule,
   ],
 
   controllers: [AppController],

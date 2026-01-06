@@ -1,6 +1,7 @@
 import {Column, CreateDateColumn, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
 import { RoleEntity } from "../role/role.entity";
 import { UserInterface } from "./user.interface";
+import { Exclude } from "class-transformer";
 
 @Entity('users')
 export class UserEntity implements UserInterface{
@@ -28,4 +29,8 @@ export class UserEntity implements UserInterface{
     @ManyToMany(() => RoleEntity)
     @JoinTable()
     roles: RoleEntity[];
+
+    @Column({ nullable: false })
+    @Exclude()
+    password: string;
 }

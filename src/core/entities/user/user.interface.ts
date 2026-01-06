@@ -8,7 +8,8 @@ export interface UserInterface {
     isActive: boolean,
     createdAt: Date,
     updatedAt: Date
-    roles: RoleEntity[]
+    roles: RoleEntity[],
+    password: string
 }
 
 // Prueba
